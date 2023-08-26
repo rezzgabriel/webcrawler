@@ -5,6 +5,7 @@ import com.knewin.modal.FormDataNews;
 import com.knewin.modal.ResultPage;
 import com.knewin.service.NewsService;
 import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -34,7 +35,7 @@ public class NewsResource {
     SimpleDateFormat formatoBuscaLinks = new SimpleDateFormat("dd.MM.yy");
     String url = "https://www.infomoney.com.br/mercados/";
 
-    @POST
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<DadosExtraidos> buscaDados() throws IOException {
         Document document = Jsoup.connect(url).get(); // Obtendo a primeira página de notícias
